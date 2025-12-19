@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-let dadosLogin
+let dadosLogin 
 
 context('Funcionalidade Login', () => {
     before(() => {
