@@ -1,0 +1,21 @@
+[
+    {
+        "nomeProduto": "Josie Yoga Jacket",
+        "tamanho": "M",
+        "cor": "Blue",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Augusta Pullover Jacket",
+        "tamanho": "L",
+        "cor": "Red",
+        "quantidade": 2
+    },
+    {
+        "nomeProduto": "Apollo Running Short",
+        "tamanho": "36",
+        "cor": "Black",
+        "quantidade": 2
+    }
+    
+]
