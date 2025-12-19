@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import produtosPage from "../support/page_objects/produtos.page";
-var i
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
         Quero acessar a Loja EBAC 
@@ -23,6 +23,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         //TODO: Coloque todo o fluxo de teste aqui, considerando as boas práticas e otimizações
         cy.fixture('produtos').then(dados => {
+            var i
             for (i = 0; i < 3; i++) {
                 produtosPage.buscarProdutos(dados[i].nomeProduto)
                 produtosPage.addProdutoCarrinho(
@@ -30,28 +31,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
                     dados[i].cor,
                     dados[i].quantidade
                 )
-            }
-            // produtosPage.buscarProdutos(dados[1].nomeProduto)
-            // produtosPage.addProdutoCarrinho(
-            //     dados[1].tamanho,
-            //     dados[1].cor,
-            //     dados[1].quantidade
-            // )
-
-            // produtosPage.buscarProdutos(dados[2].nomeProduto)
-            // produtosPage.addProdutoCarrinho(
-            //     dados[2].tamanho,
-            //     dados[2].cor,
-            //     dados[2].quantidade
-            // )
-
-            // produtosPage.buscarProdutos(dados[2].nomeProduto)
-            // produtosPage.addProdutoCarrinho(
-            //     dados[2].tamanho,
-            //     dados[2].cor,
-            //     dados[2].quantidade
-            // )
-            //cy.get('.woocommerce-message').should('contain', dados[1].nomeProduto)
+            }           
         })
     });
 })
