@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 import produtosPage from "../support/page_objects/produtos.page";
+import checkoutPage from "../support/page_objects/checkout.page";
+import { fakerPT_BR as faker } from '@faker-js/faker'
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -21,10 +23,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //TODO: Coloque todo o fluxo de teste aqui, considerando as boas práticas e otimizações
         cy.fixture('produtos').then(dados => {
             var i
-            for (i = 0; i < 3; i++) {
+            for (i = 0; i < 4; i++) {
                 produtosPage.buscarProdutos(dados[i].nomeProduto)
                 produtosPage.addProdutoCarrinho(
                     dados[i].tamanho,
@@ -33,5 +34,22 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
                 )
             }           
         })
+
+        cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
+        cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
+        
+        checkoutPage.preencherInformacoes(
+            faker.company.name(),
+            faker.location.streetAddress(false),
+            faker.location.secondaryAddress(),
+            faker.location.city(),
+            faker.location.state(),
+            faker.location.zipCode(),
+            faker.phone.number(),
+            faker.string.alphanumeric({ length: { min: 5, max: 10 } }),
+            'Cheque'
+        )
+        cy.wait(2000)
+        cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
     });
 })

@@ -2,7 +2,7 @@
     {
         "nomeProduto": "Josie Yoga Jacket",
         "tamanho": "M",
-        "cor": "Blue",
+        "cor": "Gray",
         "quantidade": 3
     },
     {
@@ -12,9 +12,21 @@
         "quantidade": 2
     },
     {
-        "nomeProduto": "Apollo Running Short",
-        "tamanho": "36",
+        "nomeProduto": "Chaz Kangeroo Hoodie",
+        "tamanho": "L",
         "cor": "Black",
+        "quantidade": 2
+    },
+    {
+        "nomeProduto": "Cassius Sparring Tank",
+        "tamanho": "L",
+        "cor": "Blue",
+        "quantidade": 2
+    },
+    {
+        "nomeProduto": "Frankie Sweatshirt",
+        "tamanho": "M",
+        "cor": "White",
         "quantidade": 2
     }
     
