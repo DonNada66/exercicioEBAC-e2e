@@ -32,12 +32,16 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
                     dados[i].cor,
                     dados[i].quantidade
                 )
-            }           
+            }
         })
 
         cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
-        cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
-        
+        cy.get('#cart')
+            .should('have.class', 'open')
+            .find('a.button.checkout.wc-forward')
+            .should('be.visible')
+            .click();
+
         checkoutPage.preencherInformacoes(
             faker.company.name(),
             faker.location.streetAddress(false),
