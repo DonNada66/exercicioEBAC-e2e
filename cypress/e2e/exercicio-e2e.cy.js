@@ -43,6 +43,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             .click();
 
         checkoutPage.preencherInformacoes(
+            faker.person.firstName(),
+            faker.person.lastName(),
             faker.company.name(),
             faker.location.streetAddress(false),
             faker.location.secondaryAddress(),
