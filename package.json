@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "allure-commandline": "^2.36.0",
     "cypress": "^13.6.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^10.1.0"
+    "@faker-js/faker": "^10.1.0",
+    "allure-cypress": "^3.4.5"
   }
 }
