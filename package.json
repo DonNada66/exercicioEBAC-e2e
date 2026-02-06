@@ -8,6 +8,10 @@
     "report": "npx allure serve --clean allure-results",
     "report:generate": "npx allure generate --clean allure-results --output allure-report"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonNada66/exercicioEBAC-e2e.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
