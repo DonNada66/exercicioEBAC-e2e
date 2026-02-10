@@ -5,13 +5,13 @@ name: Exercicio CI EBAC - Cypress
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main, staging" ]
   workflow_dispatch:
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'staging' }}
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
@@ -23,6 +23,9 @@ jobs:
       run: npm install
     - name: Rodar testes Cypress
       run: npm test
+      env:
+        USER_LOGIN: ${{ secrets.USER_LOGIN }}
+        USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
     - name: Gerar relatório Allure
       run: npm run report:generate
     - name: Publicar relatório Allure
