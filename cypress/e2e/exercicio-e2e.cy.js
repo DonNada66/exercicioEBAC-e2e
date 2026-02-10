@@ -14,11 +14,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     beforeEach(() => {
         cy.visit('minha-conta')
-        cy.fixture('perfil').then(login => {
-            cy.login(login.usuario, login.senha)
-
-        })
-        produtosPage.visitarUrl
+        cy.login()
+        produtosPage.visitarUrl()
 
     });
 
